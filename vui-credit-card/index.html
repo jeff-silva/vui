@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<title>Vue Address</title>
+</head><body><br>
+
+
+<div id="app" class="container">
+	<div class="row align-items-center">
+		<div class="col-6">
+			<input type="text" class="form-control mb-3" v-model="name">
+			<input type="text" class="form-control mb-3" v-model="number" @focus="front=true;">
+			<div class="input-group">
+				<input type="text" class="form-control" v-model="expiration" @focus="front=true;">
+				<input type="text" class="form-control" v-model="cvv" @focus="front=false;">
+			</div>
+		</div>
+		<div class="col-6">
+			<vui-credit-card
+				:number="number"
+				:name="name"
+				:expiration="expiration"
+				:cvv="cvv"
+				:front="front"
+			></vui-credit-card>
+		</div>
+	</div>
+	<br>
+	<pre class="bg-dark text-success p-2">$data: {{ $data }}</pre>
+</div>
+
+<!-- basics -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+<link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<!-- vui-credit-card -->
+<script src="https://raw.githack.com/jeff-silva/vui/master/vui-credit-card/vui-credit-card.js"></script>
+
+<script>
+new Vue({
+	el: "#app",
+	data: {
+		number: "",
+		name: "",
+		expiration: "",
+		cvv: "",
+		front: true,
+	},
+});
+</script>
+
+
+</body></html>
