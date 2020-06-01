@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<title>Vue Address</title>
+</head><body><br>
+
+
+<div id="app" class="container">
+	<vui-address v-model="value"></vui-address>
+	<pre class="bg-dark text-success p-2">$data: {{ $data }}</pre>
+</div>
+
+<!-- basics -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css">
+<link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<!-- leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/vue2-leaflet"></script>
+<script>
+Vue.component("l-map", Vue2Leaflet.LMap);
+Vue.component("l-tile-layer", Vue2Leaflet.LTileLayer);
+Vue.component("l-circle", Vue2Leaflet.LCircle);
+Vue.component("l-marker", Vue2Leaflet.LMarker);
+Vue.component("l-control", Vue2Leaflet.LControl);
+Vue.component("l-popup", Vue2Leaflet.LPopup);
+</script>
+
+<!-- vui-address -->
+<script src="./vui-address.js"></script>
+
+<script>
+new Vue({
+	el: "#app",
+	data: {
+		value: {},
+	},
+});
+</script>
+
+
+</body></html>
